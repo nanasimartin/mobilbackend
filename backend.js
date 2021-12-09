@@ -16,7 +16,7 @@ app.get('/kerdesek', (req, res) => {
       host: 'localhost',
       user: 'root',
       password: '',
-      database: 'fociadatb'
+      database: 'foci'
     })
     
     connection.connect()
