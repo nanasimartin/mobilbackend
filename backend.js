@@ -48,7 +48,7 @@ app.get('/kerdesek', (req, res) => {
     
     let dt=new Date();
     let teljesdat=dt.getFullYear()+"-"+  (dt.getMonth()+1)   +"-"+dt.getDate();
-    connection.query("INSERT INTO beerkezett VALUES (NULL, '"+req.body.beviteltomb[1]+"', '"+req.body.beviteltomb[2]+"','"+req.body.beviteltomb[3]+"','"+req.body.beviteltomb[4]+"','"+req.body.beviteltomb[5]+"','"+req.body.beviteltomb[6]+"','"+req.body.beviteltomb[7]+"','"+req.body.beviteltomb[9]+"','"+req.body.beviteltomb[10]+"','"+req.body.beviteltomb[8]+"','"+req.body.bevitel1+"', '"+teljesdat+"') ", function (err, rows, fields) {
+    connection.query("INSERT INTO beerkezett VALUES (NULL, '"+req.body.beviteltomb[1]+"', '"+req.body.beviteltomb[2]+"','"+req.body.beviteltomb[3]+"','"+req.body.beviteltomb[4]+"','"+req.body.beviteltomb[5]+"','"+req.body.beviteltomb[6]+"','"+req.body.beviteltomb[7]+"','"+req.body.beviteltomb[8]+"','"+req.body.beviteltomb[9]+"','"+req.body.beviteltomb[10]+"','"+req.body.bevitel1+"', '"+teljesdat+"') ", function (err, rows, fields) {
       if (err) throw err
     
       console.log("Sikeres kitoltes!")
