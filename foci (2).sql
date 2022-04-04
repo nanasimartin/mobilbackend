@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2022. Feb 09. 18:31
+-- Létrehozás ideje: 2022. Ápr 04. 14:11
 -- Kiszolgáló verziója: 10.4.17-MariaDB
 -- PHP verzió: 8.0.1
 
@@ -39,6 +39,7 @@ CREATE TABLE `beerkezett` (
   `beerkezett_valasz8` varchar(255) COLLATE utf8_hungarian_ci NOT NULL,
   `beerkezett_valasz9` varchar(255) COLLATE utf8_hungarian_ci NOT NULL,
   `beerkezett_valasz10` varchar(255) COLLATE utf8_hungarian_ci NOT NULL,
+  `beerkezett_osszjo` varchar(255) COLLATE utf8_hungarian_ci NOT NULL,
   `beerkezett_nev` varchar(255) COLLATE utf8_hungarian_ci NOT NULL,
   `beerkezett_datum` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
@@ -47,14 +48,9 @@ CREATE TABLE `beerkezett` (
 -- A tábla adatainak kiíratása `beerkezett`
 --
 
-INSERT INTO `beerkezett` (`beerkezett_id`, `beerkezett_valasz1`, `beerkezett_valasz2`, `beerkezett_valasz3`, `beerkezett_valasz4`, `beerkezett_valasz5`, `beerkezett_valasz6`, `beerkezett_valasz7`, `beerkezett_valasz8`, `beerkezett_valasz9`, `beerkezett_valasz10`, `beerkezett_nev`, `beerkezett_datum`) VALUES
-(1, 'Argentina', 'Erling Braut Haland', 'Liverpool FC', 'Adama Traore', 'Dzsudzsák Balázs', 'Ukrajna', 'Puskás Ferenc', 'Ukrajna', '', '', 'István', '2022-01-16'),
-(19, '1', '4', '4', '2', '1', '3', '3', '2', '', '', 'Istvan', '2022-01-17'),
-(20, '1', '2', '1', '2', '2', '4', '1', '2', '', '', 'undefined', '2022-01-17'),
-(21, '1', '2', '4', '4', '4', '1', '4', '1', '', '', 'istvan ', '2022-01-17'),
-(22, '1', '2', '4', '1', '3', '2', '1', '4', '4', '1', 'isu', '2022-01-18'),
-(23, '4', '3', '4', '4', '3', '2', '1', '2', '4', '1', 'isuk', '2022-01-18'),
-(24, '1', '4', '3', '4', '3', '1', '2', '3', '2', '3', 'Isuuuu', '2022-01-20');
+INSERT INTO `beerkezett` (`beerkezett_id`, `beerkezett_valasz1`, `beerkezett_valasz2`, `beerkezett_valasz3`, `beerkezett_valasz4`, `beerkezett_valasz5`, `beerkezett_valasz6`, `beerkezett_valasz7`, `beerkezett_valasz8`, `beerkezett_valasz9`, `beerkezett_valasz10`, `beerkezett_osszjo`, `beerkezett_nev`, `beerkezett_datum`) VALUES
+(202, '1', '4', '0', '0', '0', '0', '0', '0', '0', '0', '2', '', '2022-03-27'),
+(203, '1', '4', '2', '3', '1', '4', '4', '1', '3', '2', '10', '', '2022-03-27');
 
 -- --------------------------------------------------------
 
@@ -79,7 +75,7 @@ CREATE TABLE `kerdesek` (
 --
 
 INSERT INTO `kerdesek` (`kerdesek_id`, `kerdesek_kerdes`, `kerdesek_kep`, `kerdesek_valasz1`, `kerdesek_valasz2`, `kerdesek_valasz3`, `kerdesek_valasz4`, `kerdesek_helyes`, `kerdesek_helyesid`) VALUES
-(1, 'Ki nyerte az idei copa americat?', '4.jpg', 'Argentina', 'Brazilia', 'Perui', 'Paraguayi', 'Argentina', 1),
+(1, 'Ki nyerte az idei Copa Americat?', '4.jpg', 'Argentina', 'Brazilia', 'Perui', 'Paraguayi', 'Argentina', 1),
 (2, 'Ki látható a képen?', '1.jpg', 'Robert Lewandowski', 'Erling Braut Haland', 'Kylian Mbappé', 'Mohamed Salah', 'Mohamed Salah', 4),
 (3, 'Ki nyerte a legútóbbi bajnokok ligáját?', '5.jpg', 'Liverpool FC', 'Real Madrid CF', 'Sporting CP', 'AFC Ajax', 'Real Madrid CF', 2),
 (4, 'Ki a leggyorsabb labdarúgó?', '6.jpg', 'Vinicius Jr.', 'Cristiano Ronaldo', 'Alphonso Davies', 'Adama Traore', 'Alphonso Davies', 3),
@@ -88,8 +84,7 @@ INSERT INTO `kerdesek` (`kerdesek_id`, `kerdesek_kerdes`, `kerdesek_kep`, `kerde
 (7, 'Ki a valaha volt legnagyobb Magyar futballista?', '8.jpg', 'Dzsudzsák Balázs ', 'Király Gábor', 'Grosics Gyula', 'Puskás Ferenc', 'Puskás Ferenc', 4),
 (8, 'Melyik válogatott csapat látható a képen?', '3.jpg', 'Ukrajna', 'Argentina', 'Brazília', 'Chilei ', 'Ukrajna', 1),
 (9, 'Hány aranylabdája van Lionel Messinek?', '9.jpg', '2', '0', '7', '9', '7', 3),
-(10, 'Ki az Ukrán válogatott vezetőedzője?', '10.jpg', 'Andrij Sevcsenko', 'Oleksandr Petrakov', 'Luis Enrique', 'Marco Rossi', 'Oleksandr Petrakov', 2),
-(20, 'dsaads?', 'ads', 'asdadsads', 'adsads', 'ads', 'ads', 'ads', 2);
+(10, 'Ki az Ukrán válogatott vezetőedzője?', '10.jpg', 'Andrij Sevcsenko', 'Oleksandr Petrakov', 'Luis Enrique', 'Marco Rossi', 'Oleksandr Petrakov', 2);
 
 -- --------------------------------------------------------
 
@@ -179,13 +174,8 @@ CREATE TABLE `uzenet` (
 --
 
 INSERT INTO `uzenet` (`uzenet_id`, `uzenet_nev`, `uzenet_szoveg`, `uzenet_datum`) VALUES
-(1, 'isu', 'ma nem mek gym', '2022-01-25'),
-(2, 'asd', 'adsads', '2022-01-25'),
-(3, 'asd', 'ads', '2022-01-25'),
-(4, 'dsa', 'ads', '2022-01-25'),
-(5, 'dsaasd', 'adsdas', '2022-01-25'),
-(6, 'asdf', 'asf', '2022-01-26'),
-(7, 'asd', 'das', '2022-02-01');
+(42, 'Adi', 'Nagyon tuti!', '2022-03-24'),
+(53, 'Istvan', 'Pacek!', '2022-03-27');
 
 --
 -- Indexek a kiírt táblákhoz
@@ -236,13 +226,13 @@ ALTER TABLE `uzenet`
 -- AUTO_INCREMENT a táblához `beerkezett`
 --
 ALTER TABLE `beerkezett`
-  MODIFY `beerkezett_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `beerkezett_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=204;
 
 --
 -- AUTO_INCREMENT a táblához `kerdesek`
 --
 ALTER TABLE `kerdesek`
-  MODIFY `kerdesek_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `kerdesek_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT a táblához `users`
@@ -254,7 +244,18 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT a táblához `uzenet`
 --
 ALTER TABLE `uzenet`
-  MODIFY `uzenet_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `uzenet_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+
+--
+-- Megkötések a kiírt táblákhoz
+--
+
+--
+-- Megkötések a táblához `user_roles`
+--
+ALTER TABLE `user_roles`
+  ADD CONSTRAINT `user_roles_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`id`),
+  ADD CONSTRAINT `user_roles_ibfk_2` FOREIGN KEY (`roleId`) REFERENCES `roles` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
