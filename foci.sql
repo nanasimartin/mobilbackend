@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2022. Ápr 04. 14:11
--- Kiszolgáló verziója: 10.4.17-MariaDB
--- PHP verzió: 8.0.1
+-- Létrehozás ideje: 2022. Ápr 07. 11:30
+-- Kiszolgáló verziója: 10.4.6-MariaDB
+-- PHP verzió: 7.3.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -20,6 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Adatbázis: `foci`
 --
+CREATE DATABASE IF NOT EXISTS `foci` DEFAULT CHARACTER SET utf8 COLLATE utf8_hungarian_ci;
+USE `foci`;
 
 -- --------------------------------------------------------
 
@@ -50,7 +53,8 @@ CREATE TABLE `beerkezett` (
 
 INSERT INTO `beerkezett` (`beerkezett_id`, `beerkezett_valasz1`, `beerkezett_valasz2`, `beerkezett_valasz3`, `beerkezett_valasz4`, `beerkezett_valasz5`, `beerkezett_valasz6`, `beerkezett_valasz7`, `beerkezett_valasz8`, `beerkezett_valasz9`, `beerkezett_valasz10`, `beerkezett_osszjo`, `beerkezett_nev`, `beerkezett_datum`) VALUES
 (202, '1', '4', '0', '0', '0', '0', '0', '0', '0', '0', '2', '', '2022-03-27'),
-(203, '1', '4', '2', '3', '1', '4', '4', '1', '3', '2', '10', '', '2022-03-27');
+(203, '1', '4', '2', '3', '1', '4', '4', '1', '3', '2', '10', '', '2022-03-27'),
+(204, '1', '3', '4', '3', '2', '2', '3', '4', '1', '1', '2', 'istvan', '2022-04-07');
 
 -- --------------------------------------------------------
 
@@ -175,7 +179,8 @@ CREATE TABLE `uzenet` (
 
 INSERT INTO `uzenet` (`uzenet_id`, `uzenet_nev`, `uzenet_szoveg`, `uzenet_datum`) VALUES
 (42, 'Adi', 'Nagyon tuti!', '2022-03-24'),
-(53, 'Istvan', 'Pacek!', '2022-03-27');
+(53, 'Istvan', 'Pacek!', '2022-03-27'),
+(54, 'istvan ', 'ketto', '2022-04-07');
 
 --
 -- Indexek a kiírt táblákhoz
@@ -226,7 +231,7 @@ ALTER TABLE `uzenet`
 -- AUTO_INCREMENT a táblához `beerkezett`
 --
 ALTER TABLE `beerkezett`
-  MODIFY `beerkezett_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=204;
+  MODIFY `beerkezett_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=205;
 
 --
 -- AUTO_INCREMENT a táblához `kerdesek`
@@ -244,7 +249,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT a táblához `uzenet`
 --
 ALTER TABLE `uzenet`
-  MODIFY `uzenet_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `uzenet_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- Megkötések a kiírt táblákhoz
